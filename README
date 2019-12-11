@@ -1,2 +1,6 @@
 Method of patching the import table in ELF shared libraries.
 Read more info at CodeProject (http://www.codeproject.com/KB/library/elf-redirect.aspx).
+
+gcc -g3 -m32 -shared -o libtest1.so libtest1.c
+gcc -g3 -m32 -fPIC -shared -o libtest2.so libtest2.c
+gcc -g3 -m32 -L$PWD -o test test.c -ltest1 -ltest2 –ldl
